@@ -16,11 +16,15 @@ This chart was only tested with ` helm v3 `, to use it run : ` helm install ./he
 
 # Access the application 
 This application was tested in OKD 3.11 (Openshift origin), no extra configuration is needed if you're running on OKD, you need only to create a route for the service to be able to access it from outside the cluster. 
-If you don't have a Loadbalancer in your cluster you may consider using NodePort or install a LoadBalancer like [MetalLB] (https://metallb.universe.tf) to your cluster. 
+
+If you don't have a Loadbalancer in your cluster you may consider using `NodePort` or install a LoadBalancer like [MetalLB](https://metallb.universe.tf) to your cluster. 
 
 # Update:
 
 To deploy new version of the application with no down time you need only to patch the deployment to point to the new docker image. 
+
 In case you want to rollback to a previous version use:
+
  `kubectl rollout history deployment "yourdeployement` to check all the available version.
+
  `kubectl rollout undo deployment hello-world --to-revision=x` where `x` is the desired version.
