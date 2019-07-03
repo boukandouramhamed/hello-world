@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: riskident-deployment
+  labels:
+    app: riskident
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: riskident
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: riskident
+    spec:
+      containers:
+      - name: riskident
+        image: docker-registry.default.svc:5000/openshift/riskident:centos
+        ports:
+        - containerPort: 8080
