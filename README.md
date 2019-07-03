@@ -1,6 +1,6 @@
 # hello-world
 Simple  application to deploy in kubernetes with basic configuration files and a helm chart.
-The application consiste of serving a simple file "index.html" with apache. Deploying this application will generate three replica-set which can be modified inside the `deployment.yaml` or just run `kubectl scale deployment --replicas=x` where `x` is the desired pod number. 
+The application consiste of serving a simple file "index.html" with apache. Deploying this application will generate three replica-set which can be modified inside the `deployment.yaml` or just run `kubectl scale deployment "deployementname" --replicas=x` where `x` is the desired pod number. 
 # Build
 In order to deploy this application you need first to build the docker image: 
   - Clone this project and run inside the project `docker build -t image-name:tag .` 
