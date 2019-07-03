@@ -14,4 +14,7 @@ To deploy this application with basic configuration file run the following comma
 # Deploy with Chart
 This chart was only tested with ` helm v3 `, to use it run : ` helm install ./hello-world --name-template=deploymentname -set image.repository="yourimage" --set image.tag="yourtag" ` or change manualy the image name and tag in ` templates/deployment.yaml ` to match the generated image.
 
+# Access the application 
+This application was tested in OKD 3.11 (Openshift origin), no extra configuration is needed if you're running on OKD, you need only to create a route for the service to be able to access it from outside the cluster. 
+If you don't have a Loadbalancer in your cluster you may consider using NodePort or install a LoadBalancer like MetalLB https://metallb.universe.tf/ in your cluster. 
  
