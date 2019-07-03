@@ -8,6 +8,7 @@ replicaCount: 3
 image:
   repository: docker-registry.default.svc:5000/openshift/riskident
   pullPolicy: IfNotPresent
+  tag: v1
 
 nameOverride: ""
 fullnameOverride: ""
