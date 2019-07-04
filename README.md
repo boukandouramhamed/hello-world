@@ -12,7 +12,7 @@ To deploy this application with basic configurations files run the following com
    ` kubectl create -f deployment.yaml -n yournamespace `  
    ` kubectl create -f svc.yaml -n yournamespace`
 # Deploy with Chart
-This chart was only tested with ` helm v3 `, to use it run : ` helm install ./hello-world --name-template=deploymentname -set image.repository="yourimage" --set image.tag="yourtag" ` or change manualy the image name and tag in ` templates/deployment.yaml ` to match the generated image.
+This chart was only tested with ` helm v3 `, to use it run : ` helm install ./hello-world --name-template=deploymentname -set image.repository="yourimage" --set image.tag="yourtag" ` or change manualy the image name and tag in ` templates/deployment.yaml ` to match the generated docker image.
 
 # Access the application 
 This application was tested in OKD 3.11 (Openshift origin), no extra configuration is needed if you're running on OKD, you need only to create a route for the service to be able to access it from outside the cluster. 
