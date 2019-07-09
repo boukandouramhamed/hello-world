@@ -5,14 +5,13 @@
 replicaCount: 3
 
 image:
-  repository: docker.io/akymhd/riskident
+  repository: docker.io/akymhd/httpd-centos
   tag: v3
   pullPolicy: IfNotPresent
 
 strategy:
-    rollingUpdate:
-      maxSurge: 30%
-      maxUnavailable: 30%
+    maxSurge: 30%
+    maxUnavailable: 30%
     type: RollingUpdate
 
 livenessProbe:
