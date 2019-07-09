@@ -11,7 +11,8 @@ To deploy this application with basic configurations files run the following com
    ` kubectl create -f deployment.yaml -n yournamespace `  
    ` kubectl create -f svc.yaml -n yournamespace`
 # Deploy with Chart
-This chart was only tested with ` helm v3 `, to use it run : ` helm install ./hello-world --name-template=deploymentname `
+This chart was only tested with ` helm v3 ` 
+To use it run : ` helm install ./hello-world --name-template=deploymentname `
 
 Parameter | Description | Default
 ---|---|---
