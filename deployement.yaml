@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: riskident
-        image: docker-registry.default.svc:5000/openshift/riskident:centos
+        image: docker.io/akymhd/httpd-centos:v3
         ports:
           - name: http 
             containerPort: 8080
