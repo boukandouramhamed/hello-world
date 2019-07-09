@@ -3,6 +3,7 @@ Simple  application to deploy in kubernetes with basic configuration files and a
 The application consiste of serving a simple file "index.html" with apache. Deploying this application will generate three replica-set which can be modified inside the `deployment.yaml` or just run `kubectl scale deployment "deployementname" --replicas=x` where `x` is the desired pod number. 
 # Build Docker Image
 The Docker image used in this application is already pushed to [docker.hub](https://hub.docker.com/r/akymhd/httpd-centos)
+
 To build this docker image clone the project and run  `docker build -t image-name:tag project_dir`
 
 # Deploy
