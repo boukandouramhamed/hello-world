@@ -38,8 +38,11 @@ Parameter | Description | Default
 # Access the application 
 
 `export deploymentname='yourdeploymentname'`
+
 `export serviceaddress=kubectl get svc $deploymentname | awk 'NR>1 {print $3}'`
+
 `export serviceport=$(kubectl get svc $deploymentname | awk 'NR>1 {print $5}' | sed 's/.\{4\}$//')`
+
 `curl $serviceaddress:$serviceport`
 
 ##### Note that this is only accessible from inside the cluster.
